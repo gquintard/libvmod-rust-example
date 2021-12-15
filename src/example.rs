@@ -83,9 +83,9 @@ fn conv(input: *const c_char) -> String {
 }
 
 #[no_mangle]
-pub extern fn init_function(_	: *const VrtCtx,
-			    prv	: &mut vmod_priv,
-			    ev	: VclEvent ) -> c_int{
+pub extern fn vmod_init_function(_	: *const VrtCtx,
+			    	prv	: &mut vmod_priv,
+			    	ev	: VclEvent ) -> c_int{
 	match ev {
 		VclEvent::Warm => {
 			let hash = Mutex::new(HashMap::new());
